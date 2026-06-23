@@ -91,6 +91,7 @@ public class SellerDAOimpl implements SellerDAO {
 
             pstmt.execute();
             ResultSet rs = pstmt.getResultSet();
+            rs.next();
             seller.setId(rs.getInt("id"));
             return seller;
 

@@ -59,10 +59,11 @@ public class DepartmentDAOimpl implements DepartmentDAO {
     @Override
     public Department insert(Department department) {
         String sql = "INSERT INTO department (name) VALUES (?) RETURNING id";
-        try (PreparedStatement pstm = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+        try (PreparedStatement pstm = conn.prepareStatement(sql)) {
             pstm.setString(1, department.getName());
             pstm.execute();
             ResultSet rs = pstm.getResultSet();
+            rs.next();
             // busca o id para retornar o department criado com seu id
             int id = rs.getInt("id");
             department.setId(id);
