@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 public class ConnectionFactory {
     private static String name = "docker";
     private static String password = "docker";
-    private static String url = "jdbc:postgresql://localhost5432/postgres";
+    private static String url = "jdbc:postgresql://localhost:5432/postgres";
 
 
     public static Connection getConnection() {
