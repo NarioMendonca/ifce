@@ -3,7 +3,7 @@ package dev.nario.entities;
 import java.time.LocalDate;
 
 public class Seller {
-    String id;
+    Integer id;
     String name;
     String email;
     LocalDate birthDate;
@@ -11,25 +11,23 @@ public class Seller {
     Department department;
 
     public Seller(
-        String id,
+        Integer id,
         String name,
         String email,
         LocalDate birthDate,
-        double baseSalary,
-        Department department
+        double baseSalary
     ) {
         setId(id);
         setName(name);
         setEmail(email);
         setBirthDate(birthDate);
         setBaseSalary(baseSalary);
-        setDepartment(department);
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
     public String getName() {

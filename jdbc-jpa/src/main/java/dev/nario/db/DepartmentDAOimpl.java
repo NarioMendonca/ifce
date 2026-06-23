@@ -8,8 +8,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.management.RuntimeErrorException;
-
 import dev.nario.entities.Department;
 
 public class DepartmentDAOimpl implements DepartmentDAO {
@@ -65,6 +63,7 @@ public class DepartmentDAOimpl implements DepartmentDAO {
             pstm.setString(1, department.getName());
             pstm.execute();
             ResultSet rs = pstm.getResultSet();
+            // busca o id para retornar o department criado com seu id
             int id = rs.getInt("id");
             department.setId(id);
             return department;
